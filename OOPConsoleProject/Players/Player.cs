@@ -20,7 +20,7 @@ namespace OOPConsoleProject
         protected int maxHP;
         public int MaxHP { get { return maxHP; } }
 
-        protected int attack;
+        public int attack;
         public int Attack { get { return attack; } }
 
         protected int defense;
