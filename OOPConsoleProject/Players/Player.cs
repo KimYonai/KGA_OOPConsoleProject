@@ -14,10 +14,10 @@ namespace OOPConsoleProject
         protected Job job;
         public Job Job { get { return job; } }
 
-        protected int curHP;
+        public int curHP;
         public int CurHP { get { return curHP; } }
 
-        protected int maxHP;
+        public int maxHP;
         public int MaxHP { get { return maxHP; } }
 
         public int attack;
