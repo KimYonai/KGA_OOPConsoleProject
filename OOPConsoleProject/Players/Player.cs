@@ -9,26 +9,13 @@ namespace OOPConsoleProject
     // 이벤트 보고 TkeDamage와 Die 추가해보기
     public abstract class Player
     {
-        protected string name;
-        public string Name { get { return name; } }
-
+        public string name;
         public Job job;
-        public Job Job { get { return job; } }
-
         public int curHP;
-        public int CurHP { get { return curHP; } }
-
         public int maxHP;
-        public int MaxHP { get { return maxHP; } }
-
         public int attack;
-        public int Attack { get { return attack; } }
-
         protected int defense;
-        public int Defense { get { return defense; } }
-
         protected int gold;
-        public int Gold { get { return gold; } set { gold = value; } }
 
         public abstract void Skill(Monster monster);
 
@@ -48,11 +35,11 @@ namespace OOPConsoleProject
         {
             Console.WriteLine($"{name} 이/가 {monster.attack - defense}의 데미지를 받았습니다.");
             curHP = curHP - (monster.attack - defense);
+        }
 
-            if (curHP <= 0)
-            {
-                Die();
-            }
+        public void Attack(Monster monster)
+        {
+            Console.WriteLine($"{name} 이/가 {monster.name}을 공격한다.");
         }
 
         public void Die()
@@ -62,6 +49,7 @@ namespace OOPConsoleProject
             Console.WriteLine($"{name} 은/는 쓰러졌습니다.");
             Thread.Sleep(2000);
             Console.WriteLine("눈을 뜨니 숙소의 침대 위에 있다.");
+            Thread.Sleep(2000);
         }
     }
 }
