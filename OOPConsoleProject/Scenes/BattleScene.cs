@@ -9,8 +9,7 @@ namespace OOPConsoleProject.Scenes
     public class BattleScene : Scene
     {
         private string input;
-        private Player player;
-        private Monster monster;
+
         public BattleScene(Game game) : base(game) { }
 
         public override void Enter()
@@ -20,7 +19,7 @@ namespace OOPConsoleProject.Scenes
             Thread.Sleep(2000);
 
             Console.Clear();
-            Console.WriteLine($"{player.name} 은/는 {monster.name}과 전투를 시작한다.");
+            Console.WriteLine($"{game.Player.Name} 은/는 {game.Monster.Name}과 전투를 시작한다.");
         }
 
         public override void Exit()
@@ -51,19 +50,20 @@ namespace OOPConsoleProject.Scenes
             {
                 case "1":
                     Console.Clear();
-                    monster.TakeDamage(player);
-                    if (monster.curHP <= 0)
+                    game.Player.AttackMonster(game.Monster);
+                    game.Monster.TakeDamage(game.Player);
+                    if (game.Monster.CurHP <= 0)
                     {
-                        monster.Die();
+                        game.Monster.Die();
                     }
                     else
                     {
                         Console.Clear();
-                        Console.WriteLine($"공격을 받은 {monster.name} 이/가 반격합니다.");
-                        player.TakeDamage(monster);
-                        if (player.curHP <= 0)
+                        Console.WriteLine($"공격을 받은 {game.Monster.Name} 이/가 반격합니다.");
+                        game.Player.TakeDamage(game.Monster);
+                        if (game.Player.CurHP <= 0)
                         {
-                            player.Die();
+                            game.Player.Die();
                             game.ChangeScene(SceneType.Home);
                         }
                     }                    
@@ -71,19 +71,19 @@ namespace OOPConsoleProject.Scenes
 
                 case "2":
                     Console.Clear();
-                    player.Skill(monster);
-                    if (monster.curHP <= 0)
+                    game.Player.Skill(game.Monster);
+                    if (game.Monster.CurHP <= 0)
                     {
-                        monster.Die();
+                        game.Monster.Die();
                     }
                     else
                     {
                         Console.Clear();
-                        Console.WriteLine($"공격을 받은 {monster.name} 이/가 반격합니다.");
-                        player.TakeDamage(monster);
-                        if (player.curHP <= 0)
+                        game.Monster.AttackPlayer(game.Player);
+                        game.Player.TakeDamage(game.Monster);
+                        if (game.Player.CurHP <= 0)
                         {
-                            player.Die();
+                            game.Player.Die();
                             game.ChangeScene(SceneType.Home);
                         }
                     }
@@ -91,7 +91,7 @@ namespace OOPConsoleProject.Scenes
 
                 case "3":
                     Console.Clear();
-                    Console.WriteLine($"{player.name} 은/는 겁에 질려 도망갑니다.");
+                    Console.WriteLine($"{game.Player.Name} 은/는 겁에 질려 도망갑니다.");
                     Thread.Sleep(2000);
                     game.ChangeScene(SceneType.Home);
                     break;

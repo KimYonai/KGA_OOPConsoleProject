@@ -20,11 +20,6 @@ namespace OOPConsoleProject.Scenes
 
         }
 
-        public override void Input()
-        {
-            Console.ReadKey();
-        }
-
         public override void Render()
         {
             Console.Clear();
@@ -35,6 +30,11 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine("▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲");
             Console.WriteLine();
             Console.WriteLine("                 [Press Any Key]              ");
+        }
+
+        public override void Input()
+        {
+            Console.ReadKey();
         }
 
         public override void Update()

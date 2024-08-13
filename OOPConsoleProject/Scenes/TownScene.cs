@@ -26,11 +26,6 @@ namespace OOPConsoleProject.Scenes
             Thread.Sleep(2000);
         }
 
-        public override void Input()
-        {
-            input = Console.ReadLine();
-        }
-
         public override void Render()
         {
             Console.Clear();
@@ -52,6 +47,11 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine();
 
             Console.Write("원하는 행동의 번호를 입력해주세요: ");
+        }
+
+        public override void Input()
+        {
+            input = Console.ReadLine();
         }
 
         public override void Update()

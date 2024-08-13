@@ -19,6 +19,12 @@ namespace OOPConsoleProject
         private Player player;
         public Player Player { get { return player; } set { player = value; } }
 
+        private Monster monster;
+        public Monster Monster { get { return monster; } set { monster = value; } }
+
+        private Item item;
+        public Item Item { get { return item; } set { item = value; } }
+
         public void Run()
         {
             Start();

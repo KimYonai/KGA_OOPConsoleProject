@@ -27,11 +27,6 @@ namespace OOPConsoleProject.Scenes
             Thread.Sleep(2000);
         }
 
-        public override void Input()
-        {
-            Console.ReadKey();
-        }
-
         public override void Render()
         {
             Console.Clear();
@@ -52,24 +47,29 @@ namespace OOPConsoleProject.Scenes
             Console.Write("원하는 행동의 번호를 입력해주세요: ");
         }
 
+        public override void Input()
+        {
+            Console.ReadKey();
+        }
+
         public override void Update()
         {
             switch (input)
             {
                 case "1":
-                    Console.WriteLine($"{player.name} 이/가 푹신한 침대에 몸을 던져 휴식을 취한다.");
+                    Console.WriteLine($"{game.Player.Name} 이/가 푹신한 침대에 몸을 던져 휴식을 취한다.");
                     Thread.Sleep(1000);
-                    if (player.maxHP - player.curHP >= 30)
+                    if (game.Player.MaxHP - game.Player.CurHP >= 30)
                     {
                         Console.WriteLine("체력을 회복합니다.");
                         player.curHP += 30;
                     }
-                    else if (player.maxHP - player.curHP < 30)
+                    else if (game.Player.MaxHP - game.Player.CurHP < 30)
                     {
                         Console.WriteLine("체력을 회복합니다.");
-                        player.curHP += player.maxHP - player.curHP;
+                        player.curHP += game.Player.MaxHP - game.Player.CurHP;
                     }
-                    else if (player.maxHP == player.curHP)
+                    else if (game.Player.MaxHP == game.Player.CurHP)
                     {
                         Console.WriteLine("하지만 기운이 넘쳐서인지 내 몸이 침대를 거부한다...");
                     }
