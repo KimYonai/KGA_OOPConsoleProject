@@ -9,23 +9,34 @@ namespace OOPConsoleProject
 {
     public class Monster
     {
-        protected string name;
+        public string name;
         public string Name { get { return name; } }
 
-        protected int maxHP;
+        public int level;
+        public int Level { get { return level; } }
+
+        public int maxHP;
         public int MaxHP { get { return maxHP; } }
 
-        protected int curHP;
+        public int curHP;
         public int CurHP { get { return curHP; } }
 
-        protected int attack;
+        public int attack;
         public int Attack { get { return attack; } }
 
-        protected int defense;
+        public int defense;
         public int Defense { get { return defense; } }
 
-        protected Game game;
+        public int gold;
+        public int Gold { get { return gold; } }
+
+        public Game game;
         public Monster(Game game) { this.game = game; }
+
+        public Monster()
+        {
+
+        }
 
         public void TakeDamage(Player player)
         {
@@ -45,6 +56,83 @@ namespace OOPConsoleProject
                 Die();
                 Console.WriteLine("");
             }
+        }
+    }
+
+    public class MonsterBuilder
+    {
+        public string name;
+        public int level;
+        public int maxHP;
+        public int curHP;
+        public int attack;
+        public int defense;
+        public int gold;
+
+        public MonsterBuilder()
+        {
+            name = "몬스터";
+            level = 0;
+            maxHP = 0;
+            curHP = 0;
+            attack = 0;
+            defense = 0;
+            gold = 0;
+        }
+
+        public Monster Build()
+        {
+            Monster monster = new Monster();
+            monster.name = name;
+            monster.level = level;
+            monster.maxHP = maxHP;
+            monster.curHP = curHP;
+            monster.attack = attack;
+            monster.defense = defense;
+            monster.gold = gold;
+            return monster;
+        }
+
+        public MonsterBuilder SetName(string name)
+        {
+            this.name = name;
+            return this;
+        }
+
+        public MonsterBuilder SetLevel(int level)
+        {
+            this.level = level;
+            return this;
+        }
+
+        public MonsterBuilder SetMaxHP(int maxHP)
+        {
+            this.maxHP = maxHP;
+            return this;
+        }
+
+        public MonsterBuilder SetCurHP(int curHP)
+        {
+            this.curHP = curHP;
+            return this;
+        }
+
+        public MonsterBuilder SetAttack(int attack)
+        {
+            this.attack = attack;
+            return this;
+        }
+
+        public MonsterBuilder SetDefense(int defense)
+        {
+            this.defense = defense;
+            return this;
+        }
+
+        public MonsterBuilder SetGold(int gold)
+        {
+            this.gold = gold;
+            return this;
         }
     }
 }

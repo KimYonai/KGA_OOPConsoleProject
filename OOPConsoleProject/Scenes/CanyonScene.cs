@@ -8,6 +8,8 @@ namespace OOPConsoleProject.Scenes
 {
     public class CanyonScene : Scene
     {
+        private string input;
+
         public CanyonScene(Game game) : base(game) { }
 
         public override void Enter()
@@ -26,12 +28,14 @@ namespace OOPConsoleProject.Scenes
 
         public override void Render()
         {
-
+            
         }
+
         public override void Input()
         {
-
+            Console.ReadKey();
         }
+
         public override void Update()
         {
 

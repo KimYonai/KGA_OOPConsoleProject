@@ -14,13 +14,16 @@ namespace OOPConsoleProject
         protected Job job;
         public Job Job { get { return job; } }
 
-        protected int curHP;
+        protected int level;
+        public int Level { get { return level; } }
+
+        public int curHP;
         public int CurHP { get { return curHP; } }
 
         protected int maxHP;
         public int MaxHP { get { return maxHP; } }
 
-        protected int attack;
+        public int attack;
         public int Attack { get { return attack; } }
 
         protected int defense;
@@ -64,6 +67,7 @@ namespace OOPConsoleProject
             Console.WriteLine($"{game.Player.Name} 은/는 쓰러졌습니다.");
             Thread.Sleep(2000);
             Console.WriteLine("눈을 뜨니 숙소의 침대 위에 있다.");
+            curHP = 30;
             Thread.Sleep(2000);
         }
     }
