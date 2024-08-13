@@ -57,7 +57,7 @@ namespace OOPConsoleProject.Scenes
             switch (input)
             {
                 case "1":
-                    Console.WriteLine($"{player.Name} 이/가 푹신한 침대에 몸을 던져 휴식을 취한다.");
+                    Console.WriteLine($"{player.name} 이/가 푹신한 침대에 몸을 던져 휴식을 취한다.");
                     Thread.Sleep(1000);
                     if (player.maxHP - player.curHP >= 30)
                     {
