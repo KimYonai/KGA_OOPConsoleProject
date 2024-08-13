@@ -13,10 +13,7 @@ namespace OOPConsoleProject.Scenes
         private string input;
         private string nameInput;
 
-        public SelectScene(Game game) : base(game)
-        {
-
-        }
+        public SelectScene(Game game) : base(game) { }
 
         public override void Enter()
         {

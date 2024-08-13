@@ -10,10 +10,7 @@ namespace OOPConsoleProject
     {
         protected Game game;
 
-        public Scene(Game game)
-        {
-            this.game = game;
-        }
+        public Scene(Game game) { this.game = game; }
 
         public abstract void Enter();
         public abstract void Render();

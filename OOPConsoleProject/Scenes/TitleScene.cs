@@ -4,14 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOPConsoleProject
+namespace OOPConsoleProject.Scenes
 {
     public class TitleScene : Scene
     {
-        public TitleScene(Game game) : base(game)
-        {
-
-        }
+        public TitleScene(Game game) : base(game) { }
 
         public override void Enter()
         {

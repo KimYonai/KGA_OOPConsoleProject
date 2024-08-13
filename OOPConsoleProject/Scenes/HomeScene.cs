@@ -4,17 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOPConsoleProject
+namespace OOPConsoleProject.Scenes
 {
     public class HomeScene : Scene
     {
         private string input;
         private Player player;
 
-        public HomeScene(Game game) : base(game)
-        {
-
-        }
+        public HomeScene(Game game) : base(game) { }
 
         public override void Enter()
         {
@@ -72,7 +69,7 @@ namespace OOPConsoleProject
                         Console.WriteLine("체력을 회복합니다.");
                         player.curHP += player.maxHP - player.curHP;
                     }
-                    else if (player.maxHP - player.curHP == 0)
+                    else if (player.maxHP == player.curHP)
                     {
                         Console.WriteLine("하지만 기운이 넘쳐서인지 내 몸이 침대를 거부한다...");
                     }

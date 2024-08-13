@@ -4,17 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOPConsoleProject
+namespace OOPConsoleProject.Scenes
 {
     public class ChurchScene : Scene
     {
         private string input;
         private Player player;
 
-        public ChurchScene(Game game) : base(game)
-        {
-
-        }
+        public ChurchScene(Game game) : base(game) { }
 
         public override void Enter()
         {
@@ -60,10 +57,35 @@ namespace OOPConsoleProject
             switch (input)
             {
                 case "1":
-                    Console.WriteLine("성스러운 기운의 축복을 받았습니다.");
-                    Thread.Sleep(1000);
-                    Console.WriteLine("공격력이 10 상승했습니다.");
-                    player.attack += 10;
+                    // 각 직업별로 1번 증가받고, 그 다음은 축복을 받아도 공격력이 증가하지 않게 설정(전사는 2번 받을 수 있게 설정)
+                    // 성직자는 공격력이 증가하지 않게 설정
+                    if (player.job == Job.Warrior && player.job == Job.Rogue
+                        && player.attack >= 50)
+                    {
+                        Console.WriteLine("이미 축복을 받아 성스러움이 묻어난다.");
+                        Thread.Sleep(1000);
+                        Console.WriteLine("다음 사람에게 양보하자.");
+                    }
+                    else if (player.job == Job.Archor &&  player.job == Job.Mage
+                            && player.attack >= 60)
+                    {
+                        Console.WriteLine("이미 축복을 받아 성스러움이 묻어난다.");
+                        Thread.Sleep(1000);
+                        Console.WriteLine("다음 사람에게 양보하자.");
+                    }
+                    else if (player.job == Job.Priest)
+                    {
+                        Console.WriteLine("나는 신님을 대신해서 축복을 주는 사람...");
+                        Thread.Sleep(1000);
+                        Console.WriteLine("내가 축복을 받으면 안되지 않을까...?");
+                    }
+                    else
+                    {
+                        Console.WriteLine("성스러운 기운의 축복을 받았습니다.");
+                        Thread.Sleep(1000);
+                        Console.WriteLine("공격력이 10 상승했습니다.");
+                        player.attack += 10;
+                    }
                     break;
 
                 case "2":

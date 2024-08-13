@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOPConsoleProject.Scenes;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -48,6 +49,8 @@ namespace OOPConsoleProject
 
             scenes = new Scene[(int)SceneType.Size];
             scenes[(int)SceneType.Title] = new TitleScene(this);
+            scenes[(int)SceneType.Select] = new SelectScene(this);
+            scenes[(int)SceneType.Town] = new TownScene(this);
 
             curScene = scenes[(int)SceneType.Title];
             curScene.Enter();

@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject
 {
+    // 이벤트 보고 TkeDamage와 Die 추가해보기
     public abstract class Player
     {
         protected string name;
         public string Name { get { return name; } }
 
-        protected Job job;
+        public Job job;
         public Job Job { get { return job; } }
 
         public int curHP;
@@ -41,6 +42,26 @@ namespace OOPConsoleProject
             Console.WriteLine("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
             Console.WriteLine();
             Console.SetCursorPosition(0, 0);
+        }
+
+        public void TakeDamage(Monster monster)
+        {
+            Console.WriteLine($"{name} 이/가 {monster.attack - defense}의 데미지를 받았습니다.");
+            curHP = curHP - (monster.attack - defense);
+
+            if (curHP <= 0)
+            {
+                Die();
+            }
+        }
+
+        public void Die()
+        {
+            Console.WriteLine($"{name}의 체력이 0이 되었습니다.");
+            Thread.Sleep(2000);
+            Console.WriteLine($"{name} 은/는 쓰러졌습니다.");
+            Thread.Sleep(2000);
+            Console.WriteLine("눈을 뜨니 숙소의 침대 위에 있다.");
         }
     }
 }

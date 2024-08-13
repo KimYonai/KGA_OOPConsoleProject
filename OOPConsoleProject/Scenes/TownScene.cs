@@ -4,16 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOPConsoleProject
+namespace OOPConsoleProject.Scenes
 {
     public class TownScene : Scene
     {
         private string input;
 
-        public TownScene(Game game) : base(game)
-        {
-
-        }
+        public TownScene(Game game) : base(game) { }
 
         public override void Enter()
         {
