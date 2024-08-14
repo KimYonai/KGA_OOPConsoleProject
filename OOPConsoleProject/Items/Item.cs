@@ -14,15 +14,15 @@ namespace OOPConsoleProject
         public string script;
         public ItemType type;
         public int price;
-        public int count;
+        public int stat;
 
-        public Item(string name, string script, ItemType type, int price, int count)
+        public Item(string name, string script, ItemType type, int price, int stat)
         {
             this.name = name;
             this.script = script;
             this.type = type;
             this.price = price;
-            this.count = count;
+            this.stat = stat;
         }
     }
 }
