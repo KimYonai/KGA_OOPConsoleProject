@@ -11,6 +11,8 @@ namespace OOPConsoleProject.Items
 {
     public class Consumes : Item
     {
+        public int count;
+
         public Consumes() : base("소비 아이템", "소비 아이템 설명", ItemType.Consume, 0, 0)
         {
             name = "소비 아이템";
@@ -18,6 +20,7 @@ namespace OOPConsoleProject.Items
             type = ItemType.Consume;
             price = 0;
             stat = 0;
+            count = 0;
         }
     }
 
@@ -33,6 +36,7 @@ namespace OOPConsoleProject.Items
                 consume.type = ItemType.Consume;
                 consume.price = 50;
                 consume.stat = 20;
+                consume.count = 0;
                 return consume;
             }
             else if (name == "파란 포션")
@@ -43,6 +47,7 @@ namespace OOPConsoleProject.Items
                 consume.type = ItemType.Consume;
                 consume.price = 50;
                 consume.stat = 10;
+                consume.count = 0;
                 return consume;
             }
             else if (name == "닭다리")
@@ -53,6 +58,7 @@ namespace OOPConsoleProject.Items
                 consume.type = ItemType.Consume;
                 consume.price = 50;
                 consume.stat = 10;
+                consume.count = 0;
                 return consume;
             }
             else if (name == "성수")
@@ -63,6 +69,7 @@ namespace OOPConsoleProject.Items
                 consume.type = ItemType.Consume;
                 consume.price = 100;
                 consume.stat = 10;
+                consume.count = 0;
                 return consume;
             }
             else
