@@ -16,7 +16,7 @@ namespace OOPConsoleProject
         public int price;
         public int stat;
 
-        public Item(string name, string script, ItemType type, int price, int stat)
+        public Item(string name, string script, ItemType type, int price, int stat, int count)
         {
             this.name = name;
             this.script = script;

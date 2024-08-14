@@ -41,6 +41,7 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine("1. 공격한다(일반 공격)");
             Console.WriteLine("2. 공격한다(스킬 사용)");
             Console.WriteLine("3. 도망간다");
+            Console.WriteLine();
             Console.Write("선택할 행동: ");
         }
 
