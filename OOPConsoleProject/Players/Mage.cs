@@ -15,6 +15,8 @@ namespace OOPConsoleProject
             this.level = 1;
             this.maxHP = 80;
             this.curHP = maxHP;
+            this.maxMP = 200;
+            this.curMP = maxMP;
             this.attack = 50;
             this.defense = 10;
             this.gold = 200;

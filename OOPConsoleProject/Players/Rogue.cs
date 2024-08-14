@@ -14,6 +14,8 @@ namespace OOPConsoleProject.Players
             this.job = Job.Rogue;
             this.level = 1;
             this.maxHP = 100;
+            this.maxMP = 100;
+            this.curMP = maxMP;
             this.curHP = maxHP;
             this.attack = 40;
             this.defense = 40;

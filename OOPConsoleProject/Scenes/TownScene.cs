@@ -43,7 +43,8 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine("2. 상점으로 이동");
             Console.WriteLine("3. 교회로 이동");
             Console.WriteLine("4. 숙소로 이동");
-            Console.WriteLine("5. 수련의 숲으로 이동");
+            Console.WriteLine("5. 상점으로 이동");
+            Console.WriteLine("6. 수련의 숲으로 이동");
             Console.WriteLine();
 
             Console.Write("원하는 행동의 번호를 입력해주세요: ");
@@ -75,12 +76,16 @@ namespace OOPConsoleProject.Scenes
                     break;
 
                 case "5":
+                    game.ChangeScene(SceneType.Shop);
+                    break;
+
+                case "6":
                     game.ChangeScene(SceneType.Forest);
                     break;
 
                 default:
                     Console.WriteLine("잘못 입력했습니다.");
-                    Console.Write("보기에서 원하는 숫자를 입력해주세요: ");
+                    Console.Write("보기에서 원하시는 행동의 숫자를 입력해주세요: ");
                     Input();
                     break;
             }

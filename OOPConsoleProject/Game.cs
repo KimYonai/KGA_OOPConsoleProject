@@ -57,6 +57,10 @@ namespace OOPConsoleProject
             scenes[(int)SceneType.Title] = new TitleScene(this);
             scenes[(int)SceneType.Select] = new SelectScene(this);
             scenes[(int)SceneType.Town] = new TownScene(this);
+            scenes[(int)SceneType.Home] = new HomeScene(this);
+            scenes[(int)SceneType.Church] = new ChurchScene(this);
+            scenes[(int)SceneType.Forest] = new ForestScene(this);
+            scenes[(int)SceneType.Canyon] = new CanyonScene(this);
 
             curScene = scenes[(int)SceneType.Title];
             curScene.Enter();

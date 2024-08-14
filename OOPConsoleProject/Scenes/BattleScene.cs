@@ -73,7 +73,12 @@ namespace OOPConsoleProject.Scenes
                         if (game.Player.CurHP <= 0)
                         {
                             game.Player.Die();
+                            // 이 자리에 GameOverScene 넣기
                             game.ChangeScene(SceneType.Home);
+                        }
+                        else
+                        {
+                            Render();
                         }
                     }                    
                     break;
@@ -84,6 +89,15 @@ namespace OOPConsoleProject.Scenes
                     if (game.Monster.CurHP <= 0)
                     {
                         game.Monster.Die();
+
+                        if (game.Monster.Place == SceneType.Forest)
+                        {
+                            game.ChangeScene(SceneType.Forest);
+                        }
+                        else if (game.Monster.Place == SceneType.Canyon)
+                        {
+                            game.ChangeScene(SceneType.Canyon);
+                        }
                     }
                     else
                     {
@@ -93,7 +107,12 @@ namespace OOPConsoleProject.Scenes
                         if (game.Player.CurHP <= 0)
                         {
                             game.Player.Die();
+                            // 이 자리에 GameOverScene 넣기
                             game.ChangeScene(SceneType.Home);
+                        }
+                        else
+                        {
+                            Render();
                         }
                     }
                     break;

@@ -23,6 +23,12 @@ namespace OOPConsoleProject
         protected int maxHP;
         public int MaxHP { get { return maxHP; } }
 
+        public int curMP;
+        public int CurMP { get { return curMP; } }
+
+        protected int maxMP;
+        public int MaxMP { get { return maxMP; } }
+
         public int attack;
         public int Attack { get { return attack; } }
 
@@ -46,8 +52,9 @@ namespace OOPConsoleProject
             Console.WriteLine("▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼");
             Console.WriteLine($" 이름: {name, -6}     직업: {job, -6}");
             Console.WriteLine($" 체력: {curHP, +3} / {maxHP}     공격력: {attack, -3} / 방어력: {defense,-3}");
-            Console.WriteLine($" 골드: {gold,+5} G");
-            Console.WriteLine($" EXP: {curEXP,+5} / {maxEXP}");
+            Console.WriteLine($" 마나: {curMP, +3} / {maxMP}");
+            Console.WriteLine($" 골드: {gold, +5} G");
+            Console.WriteLine($" EXP: {curEXP, +5} / {maxEXP}");
             Console.WriteLine("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
             Console.WriteLine();
             Console.SetCursorPosition(0, 0);
