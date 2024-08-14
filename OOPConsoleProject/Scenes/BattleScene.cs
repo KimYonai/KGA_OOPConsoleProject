@@ -55,6 +55,15 @@ namespace OOPConsoleProject.Scenes
                     if (game.Monster.CurHP <= 0)
                     {
                         game.Monster.Die();
+
+                        if (game.Monster.Place == SceneType.Forest)
+                        {
+                            game.ChangeScene(SceneType.Forest);
+                        }
+                        else if (game.Monster.Place == SceneType.Canyon)
+                        {
+                            game.ChangeScene(SceneType.Canyon);
+                        }
                     }
                     else
                     {

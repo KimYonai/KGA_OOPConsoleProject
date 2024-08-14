@@ -12,11 +12,14 @@ namespace OOPConsoleProject
         {
             this.name = name;
             this.job = Job.Archor;
+            this.level = 1;
             this.maxHP = 100;
             this.curHP = maxHP;
             this.attack = 50;
             this.defense = 20;
             this.gold = 100;
+            this.maxEXP = 50;
+            this.curEXP = 0;
         }
 
         public override void Skill(Monster monster)
