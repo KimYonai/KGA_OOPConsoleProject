@@ -52,7 +52,14 @@ namespace OOPConsoleProject.Scenes
 
         public override void Update()
         {
-            
+
+        }
+
+        public void AddItem(Item item)
+        {
+            this.inventory[index] = item;
+            index++;
+            Render();
         }
 
         public void RemoveItem(Item item)
@@ -60,6 +67,6 @@ namespace OOPConsoleProject.Scenes
             inventory.RemoveAt(index);
             index--;
             Render();
-        }
+        } 
     }
 }
