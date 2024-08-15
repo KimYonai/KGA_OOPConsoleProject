@@ -30,7 +30,7 @@ namespace OOPConsoleProject
         public int MaxMP { get { return maxMP; } }
 
         public int attack;
-        public int Attack { get { return attack; } }
+        public int Attack { get { return attack; } set { gold = value; } }
 
         protected int defense;
         public int Defense { get { return defense; } }

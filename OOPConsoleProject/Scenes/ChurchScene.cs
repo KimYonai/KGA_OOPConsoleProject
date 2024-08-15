@@ -9,27 +9,21 @@ namespace OOPConsoleProject.Scenes
     public class ChurchScene : Scene
     {
         private string input;
-        private Player player;
+        
+        public ChurchScene(Player player) : base(player) { }
 
         public ChurchScene(Game game) : base(game) { }
 
         public override void Enter()
         {
             Console.Clear();
-            Console.WriteLine("Loadind...");
+            Console.WriteLine("Loading...");
             Thread.Sleep(2000);
         }
 
         public override void Exit()
         {
-            Console.Clear();
-            Console.WriteLine("Loadind...");
-            Thread.Sleep(2000);
-        }
 
-        public override void Input()
-        {
-            Console.ReadKey();
         }
 
         public override void Render()
@@ -52,39 +46,49 @@ namespace OOPConsoleProject.Scenes
             Console.Write("원하는 행동의 번호를 입력해주세요: ");
         }
 
+        public override void Input()
+        {
+            input = Console.ReadLine();
+        }
+
         public override void Update()
         {
+            Console.WriteLine("당신의 기도에 신상이 응답합니다.");
+
             switch (input)
             {
                 case "1":
-                    // 각 직업별로 1번 증가받고, 그 다음은 축복을 받아도 공격력이 증가하지 않게 설정(전사는 2번 받을 수 있게 설정)
-                    // 성직자는 공격력이 증가하지 않게 설정
+
                     if (game.Player.Job == Job.Warrior && game.Player.Job == Job.Rogue
                         && game.Player.Attack >= 50)
                     {
                         Console.WriteLine("이미 축복을 받아 성스러움이 묻어난다.");
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         Console.WriteLine("다음 사람에게 양보하자.");
+                        Thread.Sleep(2000);
                     }
                     else if (game.Player.Job == Job.Archor && game.Player.Job == Job.Mage
                             && game.Player.Attack >= 60)
                     {
                         Console.WriteLine("이미 축복을 받아 성스러움이 묻어난다.");
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         Console.WriteLine("다음 사람에게 양보하자.");
+                        Thread.Sleep(2000);
                     }
                     else if (game.Player.Job == Job.Priest)
                     {
                         Console.WriteLine("나는 신님을 대신해서 축복을 주는 사람...");
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         Console.WriteLine("내가 축복을 받으면 안되지 않을까...?");
+                        Thread.Sleep(2000);
                     }
                     else
                     {
                         Console.WriteLine("성스러운 기운의 축복을 받았습니다.");
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         Console.WriteLine("공격력이 10 상승했습니다.");
-                        player.attack += 10;
+                        game.Player.Attack += 10;
+                        Thread.Sleep(2000);
                     }
                     break;
 

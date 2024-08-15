@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOPConsoleProject.Players;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace OOPConsoleProject.Scenes
 {
     public class SelectScene : Scene
     {
+        private Player player;
+
         public enum State { Name, Job, Confirm }
         private State curState;
         private string input;
@@ -23,11 +26,6 @@ namespace OOPConsoleProject.Scenes
         public override void Exit()
         {
 
-        }
-
-        public override void Input()
-        {
-            input = Console.ReadLine();
         }
 
         public override void Render()
@@ -61,6 +59,11 @@ namespace OOPConsoleProject.Scenes
                 Console.WriteLine();
                 Console.Write("선택한 직업으로 플레이 하시겠습니까? (y/n)");
             }
+        }
+
+        public override void Input()
+        {
+            input = Console.ReadLine();
         }
 
         public override void Update()

@@ -15,15 +15,13 @@ namespace OOPConsoleProject.Scenes
         public override void Enter()
         {
             Console.Clear();
-            Console.WriteLine("Loadind...");
+            Console.WriteLine("Loading...");
             Thread.Sleep(2000);
         }
 
         public override void Exit()
         {
-            Console.Clear();
-            Console.WriteLine("Loadind...");
-            Thread.Sleep(2000);
+
         }
 
         public override void Render()

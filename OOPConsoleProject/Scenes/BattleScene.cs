@@ -29,14 +29,8 @@ namespace OOPConsoleProject.Scenes
             Thread.Sleep(2000);
         }
 
-        public override void Input()
-        {
-            input = Console.ReadLine();
-        }
-
         public override void Render()
-        {
-            
+        {  
             Console.WriteLine("행동을 선택해주세요.");
             Console.WriteLine("1. 공격한다(일반 공격)");
             Console.WriteLine("2. 공격한다(스킬 사용)");
@@ -45,8 +39,15 @@ namespace OOPConsoleProject.Scenes
             Console.Write("선택할 행동: ");
         }
 
+        public override void Input()
+        {
+            input = Console.ReadLine();
+        }
+
         public override void Update()
         {
+            Console.Clear();
+
             switch (input)
             {
                 case "1":

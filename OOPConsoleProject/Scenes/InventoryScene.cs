@@ -18,19 +18,18 @@ namespace OOPConsoleProject.Scenes
         public override void Enter()
         {
             Console.Clear();
-            Console.WriteLine("Loadind...");
+            Console.WriteLine("Loading...");
             Thread.Sleep(2000);
         }
 
         public override void Exit()
         {
-            Console.Clear();
-            Console.WriteLine("Loadind...");
-            Thread.Sleep(2000);
+
         }
 
         public override void Render()
         {
+            Console.Clear();
             Console.WriteLine("▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼");
             Console.WriteLine("           [인벤토리 목록]          ");
             Console.WriteLine("-----------------------------------");
@@ -41,8 +40,9 @@ namespace OOPConsoleProject.Scenes
                 Console.WriteLine($">> {index + 1} | {inventory[index].name}");
             }
             Console.WriteLine("▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲");
+            Console.WriteLine("마을로 돌아가기: 0");
             Console.WriteLine();
-            Console.Write("아이템 선택: ");
+            Console.Write("아이템 선택(0 ~ 10): ");
         }
 
         public override void Input()
@@ -59,6 +59,7 @@ namespace OOPConsoleProject.Scenes
         {
             inventory.RemoveAt(index);
             index--;
+            Render();
         }
     }
 }

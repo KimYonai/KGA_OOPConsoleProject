@@ -25,11 +25,11 @@ namespace OOPConsoleProject.Scenes
             Console.Clear();
             Console.WriteLine("▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼");
             Console.WriteLine();
-            Console.WriteLine("                   Game Name                  ");
+            Console.WriteLine("           Game Name");
             Console.WriteLine();
             Console.WriteLine("▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲");
             Console.WriteLine();
-            Console.WriteLine("                 [Press Any Key]              ");
+            Console.WriteLine("        [Press Any Key]");
         }
 
         public override void Input()

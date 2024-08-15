@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject
 {
-    public enum SceneType { Title, Select, Town, Shop, Church, Home, Forest, Canyon, Battle, Inventory, GameOver }
+    public enum SceneType { Title, Select, Town, Shop, Church, Home, Forest, Canyon, Battle, Inventory, GameOver, Size }
 
     public enum Job { Warrior, Mage, Archor, Rogue, Priest }
 
