@@ -60,6 +60,7 @@ namespace OOPConsoleProject.Scenes
             this.inventory[index] = item;
             index++;
             Render();
+            Update();
         }
 
         public void RemoveItem(Item item)
