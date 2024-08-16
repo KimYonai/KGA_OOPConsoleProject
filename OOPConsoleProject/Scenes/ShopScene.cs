@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject.Scenes
 {
+    // 상점 화면
+    // 코드는 여러번 수정하며 구현했지만, 마지막에 시간이 부족하여 직접 테스트를 하지는 못했습니다.
+    // 구동이 되지 않았을 경우, 잘못된 부분에 대한 피드백 부탁드립니다.
     public class ShopScene : Scene
     {
         private string input;
@@ -33,6 +36,7 @@ namespace OOPConsoleProject.Scenes
 
         }
 
+        // 상점 진입 시 출력 내용
         public override void Render()
         {
             Console.Clear();
@@ -115,15 +119,18 @@ namespace OOPConsoleProject.Scenes
             Console.Write("아이템 선택(0 ~ 7): ");
         }
 
+        // 값 입력 함수
         public override void Input()
         {
             input = Console.ReadLine();
         }
 
+        // 값 입력에 따른 업데이트
         public override void Update()
         {
             switch (input)
             {
+                // 직업에 따라 구매 가능한 무기를 다르게 설정
                 case "1":
                     if (player.gold > 200)
                     {
@@ -148,6 +155,7 @@ namespace OOPConsoleProject.Scenes
                     }
                     break;
 
+                // 직업에 따라 구매 가능한 방어구를 다르게 설정
                 case "2":
                     if (player.gold > 300)
                     {
@@ -172,6 +180,7 @@ namespace OOPConsoleProject.Scenes
                     }
                     break;
 
+                // 직업에 따라 구매 가능한 장신구를 다르게 설정
                 case "3":
                     if (player.gold > 150)
                     {
@@ -186,6 +195,7 @@ namespace OOPConsoleProject.Scenes
                     }
                     break;
 
+                // case "4" ~ "7": 소비(Consumes) 아이템
                 case "4":
                     if (player.gold > 50)
                     {
@@ -250,6 +260,7 @@ namespace OOPConsoleProject.Scenes
             }
         }
 
+        // 아이템 구매 시 인벤토리에 추가 함수
         public void AddItem()
         {
             inven.inventory[index] = item;

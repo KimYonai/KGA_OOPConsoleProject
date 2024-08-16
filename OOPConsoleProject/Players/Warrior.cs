@@ -8,6 +8,7 @@ namespace OOPConsoleProject
 {
     public class Warrior : Player
     {
+        // 플레이어 자식 클래스: 전사 직업
         public Warrior(string name)
         {
             this.name = name;

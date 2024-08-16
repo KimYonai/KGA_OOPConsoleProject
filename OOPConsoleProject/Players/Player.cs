@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject
 {
+    // 플레이어를 다루는 부모 클래스
     public abstract class Player
     {
+        // 인자값을 해당 클래스 및 자식 클래스 밖에서 사용해야 할 경우에 맞춰 프로퍼티 및 접근제한자 사용
         protected string name;
         public string Name { get { return name; } }
 
@@ -21,13 +23,13 @@ namespace OOPConsoleProject
         public int CurHP { get { return curHP; } }
 
         protected int maxHP;
-        public int MaxHP { get { return maxHP; } }
+        public int MaxHP { get { return maxHP; } set { maxHP = value; } }
 
         public int curMP;
         public int CurMP { get { return curMP; } }
 
         protected int maxMP;
-        public int MaxMP { get { return maxMP; } set { maxHP = value; } }
+        public int MaxMP { get { return maxMP; }   }
 
         public int attack;
         public int Attack { get { return attack; } set { attack = value; } }
@@ -44,8 +46,10 @@ namespace OOPConsoleProject
         public int curEXP;
         public int CurEXP { get { return curEXP; } set { curEXP = value; } }
 
+        // 전투 시 플레이어가 사용하는 스킬 -> 스킬을 맞는 대상이 몬스터이므로 몬스터를 생성자로 대입
         public abstract void Skill(Monster monster);
 
+        // 플레이어의 현재 정보 출력
         public void ShowInfo()
         {
             Console.SetCursorPosition(0, 20);
@@ -60,6 +64,7 @@ namespace OOPConsoleProject
             Console.SetCursorPosition(0, 0);
         }
 
+        // 플레이어 피격 함수
         public void TakeDamage(Monster monster)
         {
             if (monster.attack < defense)
@@ -73,13 +78,16 @@ namespace OOPConsoleProject
             } 
         }
 
+        // 플레이어 공격 함수
         public void AttackMonster(Monster monster)
         {
             Console.WriteLine($"{name} 이/가 {monster.name}을 공격한다.");
         }
 
+        // 플레이어 사망 함수
         public void Die()
         {
+
             Console.WriteLine($"{name}의 체력이 0이 되었습니다.");
             Thread.Sleep(2000);
             Console.WriteLine($"{name} 은/는 쓰러졌습니다.");
@@ -89,6 +97,7 @@ namespace OOPConsoleProject
             Thread.Sleep(2000);
         }
 
+        // 플레이어 레벨업 함수
         public void LevelUp()
         {
             if (curEXP >= maxEXP)
@@ -103,6 +112,7 @@ namespace OOPConsoleProject
             }
         }
 
+        // 플레이어 스킬 사용 이후 처리 함수
         public abstract void AfterSkill();
     }
 }

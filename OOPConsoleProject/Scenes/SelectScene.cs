@@ -7,17 +7,19 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject.Scenes
 {
+    // 플레이어 선택 화면
     public class SelectScene : Scene
     {
         private Player player;
 
-        public enum State { Name, Job, Confirm }
+        public enum State { Name, Job, Confirm }        // 이름, 작업, 확인 입력 상황을 구분하기 위한 열거형
         private State curState;
         private string input;
         private string nameInput;
 
         public SelectScene(Game game) : base(game) { }
 
+        // 플레이어의 이름 설정
         public override void Enter()
         {
             curState = State.Name;
@@ -31,11 +33,12 @@ namespace OOPConsoleProject.Scenes
         public override void Render()
         {
             Console.Clear();
-
+            // 플레이어의 이름 입력
             if (curState == State.Name)
             {
                 Console.Write("캐릭터의 이름을 입력하세요: ");
             }
+            // 플레이 할 직업 입력
             else if (curState == State.Job)
             {
                 Console.WriteLine("플레이 할 직업을 선택해주세요.");
@@ -46,6 +49,7 @@ namespace OOPConsoleProject.Scenes
                 Console.WriteLine("5. 성직자");
                 Console.Write("선택한 직업(1 ~ 5): ");
             }
+            // 선택 확인 창
             else if (curState == State.Confirm)
             {
                 Console.WriteLine("▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼");
@@ -61,11 +65,13 @@ namespace OOPConsoleProject.Scenes
             }
         }
 
+        // 값 입력 함수
         public override void Input()
         {
             input = Console.ReadLine();
         }
 
+        // 값 입력에 따른 업데이트
         public override void Update()
         {
             if (curState == State.Name)
@@ -76,6 +82,7 @@ namespace OOPConsoleProject.Scenes
                 nameInput = input;
                 curState = State.Job;
             }
+            // 입력한 값에 따른 해당 직업 정보 호출
             else if (curState == State.Job)
             {
                 switch (input)
@@ -103,6 +110,7 @@ namespace OOPConsoleProject.Scenes
 
                 curState = State.Confirm;
             }
+            // 확인 창에서의 입력값에 대한 업데이트
             else if (curState == State.Confirm)
             {
                 switch (input)

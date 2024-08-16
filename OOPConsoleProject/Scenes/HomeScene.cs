@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject.Scenes
 {
+    // 숙소 화면
     public class HomeScene : Scene
     {
         private string input;
@@ -25,6 +26,7 @@ namespace OOPConsoleProject.Scenes
 
         }
 
+        // 숙소 진입 시 출력
         public override void Render()
         {
             Console.Clear();
@@ -45,15 +47,18 @@ namespace OOPConsoleProject.Scenes
             Console.Write("원하는 행동의 번호를 입력해주세요: ");
         }
 
+        // 값 입력 함수
         public override void Input()
         {
             input = Console.ReadLine();
         }
 
+        // 값 입력에 따른 업데이트
         public override void Update()
         {
             switch (input)
             {
+                // case "1": 체력 회복
                 case "1":
                     Console.WriteLine($"{game.Player.Name} 이/가 푹신한 침대에 몸을 던져 휴식을 취한다.");
                     Thread.Sleep(2000);
@@ -76,6 +81,7 @@ namespace OOPConsoleProject.Scenes
                     }
                     break;
 
+                // case "2": 마을로 돌아가기
                 case "2":
                     game.ChangeScene(SceneType.Town);
                     break;

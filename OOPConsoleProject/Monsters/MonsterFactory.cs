@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject.Monsters
 {
+    // 몬스터 생성용 팩토리 클래스
     public class MonsterFactory
     {
         public static Monster Instantiate(string name)

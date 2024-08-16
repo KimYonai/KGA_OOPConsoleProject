@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject.Scenes
 {
+    // 게임 오버 화면
     public class GameOverScene : Scene
     {
         public GameOverScene(Game game) : base(game) { }
@@ -19,6 +20,7 @@ namespace OOPConsoleProject.Scenes
 
         }
 
+        // 게임 오버 시 출력
         public override void Render()
         {
             Console.Clear();
@@ -29,6 +31,7 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine("        [Press Any Key]");
         }
 
+        // 아무 키 입력
         public override void Input()
         {
             Console.ReadKey();

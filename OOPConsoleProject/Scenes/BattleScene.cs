@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject.Scenes
 {
+    // 전투 화면
     public class BattleScene : Scene
     {
         private string input;
 
         public BattleScene(Game game) : base(game) { }
 
+        // 전투 진입 시 출력
         public override void Enter()
         {
             Console.Clear();
@@ -22,6 +24,7 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine($"{game.Player.Name} 은/는 {game.Monster.Name}과 전투를 시작한다.");
         }
 
+        // 전투 종료 시 출력
         public override void Exit()
         {
             Console.Clear();
@@ -29,6 +32,7 @@ namespace OOPConsoleProject.Scenes
             Thread.Sleep(2000);
         }
 
+        // 전투에서 선택할 행동에 대한 선택지 출력
         public override void Render()
         {  
             Console.WriteLine("행동을 선택해주세요.");
@@ -39,21 +43,25 @@ namespace OOPConsoleProject.Scenes
             Console.Write("선택할 행동: ");
         }
 
+        // 값 입력 함수
         public override void Input()
         {
             input = Console.ReadLine();
         }
 
+        // 값 입력에 따른 업데이트
         public override void Update()
         {
             Console.Clear();
 
             switch (input)
             {
+                // case "1": 일반 공격
                 case "1":
                     Console.Clear();
                     game.Player.AttackMonster(game.Monster);
                     game.Monster.TakeDamage(game.Player);
+                    // 공격받은 몬스터의 현재 체력이 0 이하가 됐을 경우
                     if (game.Monster.CurHP <= 0)
                     {
                         game.Monster.Die();
@@ -67,6 +75,7 @@ namespace OOPConsoleProject.Scenes
                             game.ChangeScene(SceneType.Canyon);
                         }
                     }
+                    // 이외의 경우
                     else
                     {
                         Console.Clear();
@@ -85,15 +94,17 @@ namespace OOPConsoleProject.Scenes
                     }                    
                     break;
 
+                // case "2": 스킬 공격
                 case "2":
                     Console.Clear();
                     game.Player.Skill(game.Monster);
                     game.Monster.TakeDamage(game.Player);
                     game.Player.AfterSkill();
+                    // 공격받은 몬스터의 현재 체력이 0 이하가 됐을 경우
                     if (game.Monster.CurHP <= 0)
                     {
                         game.Monster.Die();
-
+                        // 전투 이전 상황의 화면으로 이동
                         if (game.Monster.Place == SceneType.Forest)
                         {
                             game.ChangeScene(SceneType.Forest);
@@ -103,24 +114,28 @@ namespace OOPConsoleProject.Scenes
                             game.ChangeScene(SceneType.Canyon);
                         }
                     }
+                    // 이외의 경우
                     else
                     {
                         Console.Clear();
                         game.Monster.AttackPlayer(game.Player);
                         game.Player.TakeDamage(game.Monster);
+                        // 플레이어의 체력이 0 이하가 됐을 경우
                         if (game.Player.CurHP <= 0)
                         {
                             game.Player.Die();
                             game.ChangeScene(SceneType.GameOver);
                             game.ChangeScene(SceneType.Home);
                         }
+                        // 이외의 경우
                         else
                         {
-                            Render();
+                            
                         }
                     }
                     break;
 
+                // case "3": 도망가기 -> 마을 화면으로 전환
                 case "3":
                     Console.Clear();
                     Console.WriteLine($"{game.Player.Name} 은/는 겁에 질려 도망갑니다.");

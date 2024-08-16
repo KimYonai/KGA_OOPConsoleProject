@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject
 {
+    // 플레이어 자식 클래스: 궁수 직업
     public class Archor : Player
     {
         public Archor(string name)

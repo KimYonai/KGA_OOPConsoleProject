@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject.Scenes
 {
+    // 협곡 화면
     public class CanyonScene : Scene
     {
         private string input;
@@ -24,6 +25,7 @@ namespace OOPConsoleProject.Scenes
 
         }
 
+        // 협곡 진입 시 출력
         public override void Render()
         {
             Console.WriteLine("아찔한 절벽이 펼쳐진 협곡에 도착했다..");
@@ -43,21 +45,25 @@ namespace OOPConsoleProject.Scenes
             Console.Write("원하는 행동의 번호를 입력해주세요: ");
         }
 
+        // 값 입력 함수
         public override void Input()
         {
             input = Console.ReadLine();
         }
 
+        // 값 입력에 따른 업데이트
         public override void Update()
         {
             switch (input)
             {
+                // case "1": 도망가기 -> 수련의 숲으로 화면 전환
                 case "1":
                     Console.WriteLine($"{game.Player.Name} 미안하다고 외치며 후다닥 도망친다.");
                     Thread.Sleep(2000);
                     game.ChangeScene(SceneType.Forest);
                     break;
 
+                // case "2": 전투하기 -> 전투 화면으로 전환
                 case "2":
                     Console.WriteLine($"{game.Player.Name} 은/는 깜짝 놀라며 전투를 준비한다.");
                     Thread.Sleep(2000);

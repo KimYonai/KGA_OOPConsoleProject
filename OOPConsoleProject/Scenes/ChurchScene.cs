@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject.Scenes
 {
+    // 교회 화면
     public class ChurchScene : Scene
     {
         private string input;
@@ -26,6 +27,7 @@ namespace OOPConsoleProject.Scenes
 
         }
 
+        // 교회 진입 시 출력
         public override void Render()
         {
             Console.Clear();
@@ -46,19 +48,22 @@ namespace OOPConsoleProject.Scenes
             Console.Write("원하는 행동의 번호를 입력해주세요: ");
         }
 
+        // 값 입력
         public override void Input()
         {
             input = Console.ReadLine();
         }
 
+        // 값 입력에 따른 업데이트
         public override void Update()
         {
             Console.WriteLine("당신의 기도에 신상이 응답합니다.");
 
             switch (input)
             {
+                // case "1": 공격력 증가 버프
                 case "1":
-
+                    // 플레이어의 공격력이 50 이상일 경우 공격력 버프 미적용
                     if (game.Player.Attack >= 50)
                     {
                         Console.WriteLine("이미 축복을 받아 성스러움이 묻어난다.");
@@ -66,6 +71,7 @@ namespace OOPConsoleProject.Scenes
                         Console.WriteLine("다음 사람에게 양보하자.");
                         Thread.Sleep(2000);
                     }
+                    // 플레이어의 직업이 성직자일 경우 공격력 버프 미적용
                     else if (game.Player.Job == Job.Priest)
                     {
                         Console.WriteLine("나는 신님을 대신해서 축복을 주는 사람...");
@@ -73,6 +79,7 @@ namespace OOPConsoleProject.Scenes
                         Console.WriteLine("내가 축복을 받으면 안되지 않을까...?");
                         Thread.Sleep(2000);
                     }
+                    // 이외의 상황에서 공격력 버프 적용
                     else
                     {
                         Console.WriteLine("성스러운 기운의 축복을 받았습니다.");
@@ -83,6 +90,7 @@ namespace OOPConsoleProject.Scenes
                     }
                     break;
 
+                // case "2": 마을로 돌아가기
                 case "2":
                     game.ChangeScene(SceneType.Town);
                     break;

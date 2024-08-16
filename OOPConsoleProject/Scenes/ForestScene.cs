@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject.Scenes
 {
+    // 수련의 숲 화면
     public class ForestScene : Scene
     {
         private string input;
@@ -24,6 +25,7 @@ namespace OOPConsoleProject.Scenes
 
         }
 
+        // 수련의 숲 진입 시 출력
         public override void Render()
         {
             Console.WriteLine("기분 좋은 바람이 나무 사이로 불어오는 수련의 숲에 도착했다.");
@@ -44,21 +46,25 @@ namespace OOPConsoleProject.Scenes
             Console.Write("원하는 행동의 번호를 입력해주세요: ");
         }
 
+        // 값 입력
         public override void Input()
         {
             input = Console.ReadLine();
         }
 
+        // 값 입력에 따른 업데이트
         public override void Update()
         {
             switch (input)
             {
+                // case "1": 도망가기 -> 마을로 화면 전환
                 case "1":
                     Console.WriteLine($"{game.Player.Name} 은/는 슬라임을 피해 빠르게 마을로 도망쳤습니다.");
                     Thread.Sleep(2000);
                     game.ChangeScene(SceneType.Town);
                     break;
 
+                // case "2": 지나가기 -> 협곡으로 화면 전환
                 case "2":
                     Console.WriteLine($"{game.Player.Name} 은/는 이 악물고 슬라임을 모른척 하며 후다닥 지나갔습니다.");
                     Thread.Sleep(2000);
@@ -67,6 +73,7 @@ namespace OOPConsoleProject.Scenes
                     game.ChangeScene(SceneType.Canyon);
                     break;
 
+                // case "3": 전투하기 -> 전투 화면으로 전환
                 case "3":
                     Console.WriteLine($"{game.Player.Name} 은/는 자신을 경계하는 슬라임과의 전투를 준비한다.");
                     Thread.Sleep(2000);

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject
 {
+    // 몬스터 클래스
     public class Monster
     {
         public string name;
@@ -45,6 +46,7 @@ namespace OOPConsoleProject
 
         public Monster() { }
 
+        // 몬스터 피격 함수
         public void TakeDamage(Player player)
         {
             if (attack < game.Player.Defense)
@@ -58,11 +60,13 @@ namespace OOPConsoleProject
             }
         }
 
+        // 몬스터 공격 함수
         public void AttackPlayer(Player player)
         {
             Console.WriteLine($"{name} 이/가 {game.Player.Name}을 공격합니다.");
         }
 
+        // 몬스터 사망 함수
         public void Die()
         {
             if (curHP == 0)
@@ -73,6 +77,7 @@ namespace OOPConsoleProject
             }
         }
 
+        // 몬스터 처치 시 지급되는 골드와 경험치 처리 함수
         public void GiveItem()
         {
             Console.WriteLine($"{game.Player.Name} 은/는 {game.Monster.Gold}G와 {game.Monster.Exp}를 획득했다.");

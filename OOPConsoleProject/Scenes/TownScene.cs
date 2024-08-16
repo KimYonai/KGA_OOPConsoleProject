@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject.Scenes
 {
+    // 마을 화면
     public class TownScene : Scene
     {
         private string input;
 
         public TownScene(Game game) : base(game) { }
 
+        // 게임 내 로딩 화면 구현
         public override void Enter()
         {
             Console.Clear();
@@ -24,6 +26,7 @@ namespace OOPConsoleProject.Scenes
 
         }
 
+        // 마을 화면 진입 시 출력
         public override void Render()
         {
             Console.Clear();
@@ -48,11 +51,13 @@ namespace OOPConsoleProject.Scenes
             Console.Write("원하는 행동의 번호를 입력해주세요: ");
         }
 
+        // 값 입력 함수
         public override void Input()
         {
             input = Console.ReadLine();
         }
 
+        // 입력한 값에 따른 업데이트
         public override void Update()
         {
             switch (input)

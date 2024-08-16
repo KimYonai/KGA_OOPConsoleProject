@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject.Scenes
 {
+    // 인벤토리 화면
+    // 코드는 여러번 수정하며 구현했지만, 마지막에 시간이 부족하여 직접 테스트를 하지는 못했습니다.
+    // 구동이 되지 않았을 경우, 잘못된 부분에 대한 피드백 부탁드립니다.
     public class InventoryScene : Scene
     {
         private string input;
@@ -34,6 +37,7 @@ namespace OOPConsoleProject.Scenes
 
         }
 
+        // 인벤토리 진입 시 출력
         public override void Render()
         {
             Console.Clear();
@@ -42,6 +46,7 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine("-----------------------------------");
             Console.WriteLine($"소유 골드: {game.Player.Gold}");
             Console.WriteLine("-----------------------------------");
+            // 인벤토리 리스트 내 아이템이 있으면 아이템 정보, 없으면 공백 출력
             if (inventory[index] != null)
             {
                 Console.WriteLine($">> {index + 1} | {inventory[index].name} | {inventory[index].script}");
@@ -56,6 +61,7 @@ namespace OOPConsoleProject.Scenes
             Console.Write("아이템 선택(0 ~ 10): ");
         }
 
+        // 값 입력 함수
         public override void Input()
         {
             input = Console.ReadLine();
@@ -63,6 +69,7 @@ namespace OOPConsoleProject.Scenes
 
         public override void Update()
         {
+            // 아이템 번호에 맞는 값 입력 시 행동
             switch (input)
             {
                 case "1":
@@ -75,10 +82,12 @@ namespace OOPConsoleProject.Scenes
                 case "8":
                 case "9":
                 case "10":
+                    // 해당 인벤토리 칸이 비어있을 경우
                     if (inventory[index] == null)
                     {
                         Console.WriteLine("해당 슬롯은 비어있습니다.");
                     }
+                    // 해당 인벤토리 칸에 소비 아이템이 있는 경우
                     else if (inventory[index] == consume)
                     {
                         Console.WriteLine("1. 아이템 사용");
@@ -95,6 +104,7 @@ namespace OOPConsoleProject.Scenes
                             RemoveItem();
                         }
                     }
+                    // 해당 인벤토리 칸에 무기 아이템이 있는 경우
                     else if (inventory[index] == weapon)
                     {
                         Console.WriteLine("1. 아이템 장착");
@@ -111,6 +121,7 @@ namespace OOPConsoleProject.Scenes
                             RemoveItem();
                         }
                     }
+                    // 해당 인벤토리 칸에 방어구 아이템이 있는 경우
                     else if (inventory[index] ==armor)
                     {
                         Console.WriteLine("1. 아이템 장착");
@@ -127,6 +138,7 @@ namespace OOPConsoleProject.Scenes
                             RemoveItem();
                         }
                     }
+                    // 해당 인벤토리 칸에 장신구 아이템이 있는 경우
                     else if (inventory[index] == acc)
                     {
                         Console.WriteLine("1. 아이템 장착");
@@ -145,12 +157,14 @@ namespace OOPConsoleProject.Scenes
                     }
                     break;
 
+                // 마을로 돌아가기
                 case "0":
                     game.ChangeScene(SceneType.Town);
                     break;
             }
         }
 
+        // 인벤토리 리스트에 있는 아이템 사용 함수
         public void UseItem()
         {
             if (inventory[index] == consume)
@@ -198,6 +212,7 @@ namespace OOPConsoleProject.Scenes
 
         }
 
+        // 인벤토리 리스트에 있는 아이템 버리기 함수
         public void RemoveItem()
         {
             Console.WriteLine("아이템을 삭제했습니다.");

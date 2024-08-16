@@ -10,6 +10,7 @@ namespace OOPConsoleProject
 {
     public class Game
     {
+        // Game 클래스 인자값
         private bool isRunning;
 
         private Scene[] scenes;
@@ -25,6 +26,7 @@ namespace OOPConsoleProject
         private Item item;
         public Item Item { get { return item; } set { item = value; } }
 
+        // 게임 구동 과정 함수(메서드)
         public void Run()
         {
             Start();
@@ -37,6 +39,7 @@ namespace OOPConsoleProject
             End();
         }
 
+        // 게임 내 화면 전환 함수(메서드)
         public void ChangeScene(SceneType sceneType)
         {
             curScene.Exit();
@@ -44,11 +47,13 @@ namespace OOPConsoleProject
             curScene.Enter();
         }
 
+        // 게임 종료 함수
         public void Over()
         {
             isRunning = false;
         }
 
+        // 게임 시작 함수
         private void Start()
         {
             isRunning = true;
@@ -72,21 +77,25 @@ namespace OOPConsoleProject
             curScene.Enter();
         }
 
+        // Scene 종료 함수
         private void End()
         {
             curScene.Exit();
         }
 
+        // Scene에 출력될 내용 렌더링 전용 함수
         private void Render()
         {
             curScene.Render();
         }
 
+        // Scene에서 필요한 값 입력 함수
         private void Input()
         {
             curScene.Input();
         }
 
+        // Input에서 입력한 값에 의한 상황 업데이트 함수
         private void Update()
         {
             curScene.Update();
