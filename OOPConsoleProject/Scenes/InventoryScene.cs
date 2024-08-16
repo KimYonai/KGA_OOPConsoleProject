@@ -46,6 +46,10 @@ namespace OOPConsoleProject.Scenes
             {
                 Console.WriteLine($">> {index + 1} | {inventory[index].name} | {inventory[index].script}");
             }
+            else
+            {
+                Console.WriteLine();
+            }
             Console.WriteLine("▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲");
             Console.WriteLine("마을로 돌아가기: 0");
             Console.WriteLine();
