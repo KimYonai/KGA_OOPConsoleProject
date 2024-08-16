@@ -27,12 +27,12 @@ namespace OOPConsoleProject
         public int CurMP { get { return curMP; } }
 
         protected int maxMP;
-        public int MaxMP { get { return maxMP; } }
+        public int MaxMP { get { return maxMP; } set { maxHP = value; } }
 
         public int attack;
         public int Attack { get { return attack; } set { attack = value; } }
 
-        protected int defense;
+        public int defense;
         public int Defense { get { return defense; } }
 
         public int gold;
