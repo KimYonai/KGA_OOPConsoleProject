@@ -26,7 +26,15 @@ namespace OOPConsoleProject.Players
 
         public override void Skill(Monster monster)
         {
+            Console.WriteLine($"{name} 이/가 {monster.name}에게 스킬을 사용한다.");
+            Thread.Sleep(2000);
+            Console.WriteLine("벽력일섬!");
+            attack += 30;
+        }
 
+        public override void AfterSkill()
+        {
+            attack -= 30;
         }
     }
 }

@@ -41,10 +41,7 @@ namespace OOPConsoleProject
 
         public Player player;
 
-        public Monster()
-        {
-
-        }
+        public Monster(Player player) { this.player = player; }
 
         public void TakeDamage(Player player)
         {

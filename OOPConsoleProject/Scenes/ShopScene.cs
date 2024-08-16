@@ -45,7 +45,7 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine("▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲");
             Console.WriteLine("마을로 돌아가기: 0");
             Console.WriteLine();
-            Console.Write("아이템 선택(0 ~ 10): ");
+            Console.Write("아이템 선택(0 ~ 4): ");
         }
 
         public override void Input()
@@ -93,11 +93,11 @@ namespace OOPConsoleProject.Scenes
             }
         }
 
-        public void AddItem()
-        {
-            inven.inventory[inven.index] = item;
-            inven.index++;
-        }
+       //public void AddItem()
+       //{
+       //    inven.inventory[inven.index] = item;
+       //    inven.index++;
+       //}
 
         public void ShopWeapon()
         {
@@ -105,60 +105,20 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine("▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼");
             Console.WriteLine("             [무기 상점]            ");
             Console.WriteLine("-----------------------------------");
-            Console.WriteLine("1 | 롱 소드: 200G");
-            Console.WriteLine("2 | 고목 스태프: 200G");
-            Console.WriteLine("3 | 사냥꾼의 활: 200G");
-            Console.WriteLine("4 | 복수의 단검: 200G");
-            Console.WriteLine("5 | 홀리 바이블: 200G");
+            Console.WriteLine($"1 | {"롱 소드"}: 200G");
+            Console.WriteLine($"1 | {"고목 스태프"}: 200G0G");
+            Console.WriteLine($"3 | {"사냥꾼의 활"}: 200G");
+            Console.WriteLine($"4 | {"복수의 단검"}: 200G");
+            Console.WriteLine($"5 | {"홀리 바이블"}: 200G");
             Console.WriteLine("▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲");
             Console.WriteLine("뒤로 가기: 0");
             Console.WriteLine();
-            Console.Write("아이템 선택(0 ~ 10): ");
+            Console.Write("아이템 선택(0 ~ 5): ");
         }
 
         public void WeaponPurchase()
         {
-            switch (input)
-            {
-                case "1":
-                    if (game.Player.Gold < 200)
-                    {
-                        Console.WriteLine("골드가 부족합니다.");
-                        Thread.Sleep(2000);
-                        ShopWeapon();
-                    }
-                    else
-                    {
-                        Console.WriteLine("구매에 성공했습니다.");
-                        //AddItem(item.name);
-                    }
-                    break;
-
-                case "2":
-                    ShopArmor();
-                    Input();
-                    break;
-
-                case "3":
-                    ShopAcc();
-                    Input();
-                    break;
-
-                case "4":
-                    ShopConsume();
-                    Input();
-                    break;
-
-                case "0":
-                    game.ChangeScene(SceneType.Town);
-                    break;
-
-                default:
-                    Console.WriteLine("잘못 입력했습니다.");
-                    Console.Write("원하는 카테고리를 숫자로 입력해주세요: ");
-                    Input();
-                    break;
-            }
+            
         }
 
         public void ShopArmor()

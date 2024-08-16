@@ -62,9 +62,9 @@ namespace OOPConsoleProject
 
         public void TakeDamage(Monster monster)
         {
-            if (attack < monster.defense)
+            if (monster.attack < defense)
             {
-                Console.WriteLine($"하지만 {name}의 공격이 너무 약해 {monster.name}에게 피해를 주지 못했습니다.");
+                Console.WriteLine($"하지만 {monster.name}의 공격이 너무 약해 {name}에게 피해를 주지 못했습니다.");
             }
             else 
             {
@@ -102,5 +102,7 @@ namespace OOPConsoleProject
                 defense += 5;
             }
         }
+
+        public abstract void AfterSkill();
     }
 }

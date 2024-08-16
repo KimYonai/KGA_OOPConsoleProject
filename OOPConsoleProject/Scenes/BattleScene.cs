@@ -88,6 +88,8 @@ namespace OOPConsoleProject.Scenes
                 case "2":
                     Console.Clear();
                     game.Player.Skill(game.Monster);
+                    game.Monster.TakeDamage(game.Player);
+                    game.Player.AfterSkill();
                     if (game.Monster.CurHP <= 0)
                     {
                         game.Monster.Die();
