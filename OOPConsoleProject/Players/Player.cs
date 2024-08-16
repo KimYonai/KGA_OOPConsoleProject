@@ -30,7 +30,7 @@ namespace OOPConsoleProject
         public int MaxMP { get { return maxMP; } }
 
         public int attack;
-        public int Attack { get { return attack; } set { gold = value; } }
+        public int Attack { get { return attack; } set { attack = value; } }
 
         protected int defense;
         public int Defense { get { return defense; } }
@@ -53,8 +53,8 @@ namespace OOPConsoleProject
             Console.WriteLine($" 이름: {name, -6}     직업: {job, -6}");
             Console.WriteLine($" 체력: {curHP, +3} / {maxHP}     공격력: {attack, -3} / 방어력: {defense,-3}");
             Console.WriteLine($" 마나: {curMP, +3} / {maxMP}");
-            Console.WriteLine($" 골드: {gold, +5} G");
-            Console.WriteLine($" EXP: {curEXP, +5} / {maxEXP}");
+            Console.WriteLine($" 골드: {gold, +3} G");
+            Console.WriteLine($" EXP: {curEXP, +3} / {maxEXP}");
             Console.WriteLine("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
             Console.WriteLine();
             Console.SetCursorPosition(0, 0);

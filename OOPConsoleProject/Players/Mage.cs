@@ -8,7 +8,7 @@ namespace OOPConsoleProject
 {
     public class Mage : Player
     {
-        public Mage()
+        public Mage(string name)
         {
             this.name = name;
             this.job = Job.Mage;

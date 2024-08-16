@@ -43,6 +43,8 @@ namespace OOPConsoleProject
 
         public Monster(Player player) { this.player = player; }
 
+        public Monster() { }
+
         public void TakeDamage(Player player)
         {
             if (attack < game.Player.Defense)

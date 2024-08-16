@@ -59,16 +59,7 @@ namespace OOPConsoleProject.Scenes
             {
                 case "1":
 
-                    if (game.Player.Job == Job.Warrior && game.Player.Job == Job.Rogue
-                        && game.Player.Attack >= 50)
-                    {
-                        Console.WriteLine("이미 축복을 받아 성스러움이 묻어난다.");
-                        Thread.Sleep(2000);
-                        Console.WriteLine("다음 사람에게 양보하자.");
-                        Thread.Sleep(2000);
-                    }
-                    else if (game.Player.Job == Job.Archor && game.Player.Job == Job.Mage
-                            && game.Player.Attack >= 60)
+                    if (game.Player.Attack >= 50)
                     {
                         Console.WriteLine("이미 축복을 받아 성스러움이 묻어난다.");
                         Thread.Sleep(2000);
