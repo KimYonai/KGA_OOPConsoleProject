@@ -14,25 +14,29 @@ namespace OOPConsoleProject.Scenes
         {
 
         }
-
-        public override void Render()
+        public override void Exit()
         {
 
         }
 
+        public override void Render()
+        {
+            Console.Clear();
+            Console.WriteLine("▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼▽▼");
+            Console.WriteLine("           Game Over");
+            Console.WriteLine("▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲");
+            Console.WriteLine();
+            Console.WriteLine("        [Press Any Key]");
+        }
+
         public override void Input()
         {
-
+            Console.ReadKey();
         }
 
         public override void Update()
         {
 
-        }
-
-        public override void Exit()
-        {
-
-        }
+        }  
     }
 }

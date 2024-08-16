@@ -75,7 +75,7 @@ namespace OOPConsoleProject.Scenes
                         if (game.Player.CurHP <= 0)
                         {
                             game.Player.Die();
-                            // 이 자리에 GameOverScene 넣기
+                            game.ChangeScene(SceneType.GameOver);
                             game.ChangeScene(SceneType.Home);
                         }
                         else
@@ -111,7 +111,7 @@ namespace OOPConsoleProject.Scenes
                         if (game.Player.CurHP <= 0)
                         {
                             game.Player.Die();
-                            // 이 자리에 GameOverScene 넣기
+                            game.ChangeScene(SceneType.GameOver);
                             game.ChangeScene(SceneType.Home);
                         }
                         else
