@@ -190,7 +190,6 @@ namespace OOPConsoleProject.Scenes
                     if (player.gold > 50)
                     {
                         Console.WriteLine("구매에 성공했습니다.");
-                        player.curHP += 20;
                         player.gold -= 50;
                         AddItem();
                     }
@@ -204,7 +203,6 @@ namespace OOPConsoleProject.Scenes
                     if (player.gold > 50)
                     {
                         Console.WriteLine("구매에 성공했습니다.");
-                        player.curMP += 10;
                         player.gold -= 50;
                         AddItem();
                     }
@@ -218,7 +216,6 @@ namespace OOPConsoleProject.Scenes
                     if (player.gold > 50)
                     {
                         Console.WriteLine("구매에 성공했습니다.");
-                        player.curHP += 10;
                         player.gold -= 50;
                         AddItem();
                     }
@@ -232,7 +229,6 @@ namespace OOPConsoleProject.Scenes
                     if (player.gold > 100)
                     {
                         Console.WriteLine("구매에 성공했습니다.");
-                        player.defense += 10;
                         player.gold -= 100;
                         AddItem();
                     }
