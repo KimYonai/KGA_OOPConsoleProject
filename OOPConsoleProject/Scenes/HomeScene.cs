@@ -56,20 +56,23 @@ namespace OOPConsoleProject.Scenes
             {
                 case "1":
                     Console.WriteLine($"{game.Player.Name} 이/가 푹신한 침대에 몸을 던져 휴식을 취한다.");
-                    Thread.Sleep(1000);
+                    Thread.Sleep(2000);
                     if (game.Player.MaxHP - game.Player.CurHP >= 30)
                     {
                         Console.WriteLine("체력을 회복합니다.");
                         player.curHP += 30;
+                        Thread.Sleep(2000);
                     }
-                    else if (game.Player.MaxHP - game.Player.CurHP < 30)
+                    else if (game.Player.MaxHP - game.Player.CurHP < 30 && game.Player.MaxHP != game.Player.CurHP)
                     {
                         Console.WriteLine("체력을 회복합니다.");
                         player.curHP += game.Player.MaxHP - game.Player.CurHP;
+                        Thread.Sleep(2000);
                     }
                     else if (game.Player.MaxHP == game.Player.CurHP)
                     {
                         Console.WriteLine("하지만 기운이 넘쳐서인지 내 몸이 침대를 거부한다...");
+                        Thread.Sleep(2000);
                     }
                     break;
 
