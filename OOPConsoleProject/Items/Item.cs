@@ -10,11 +10,11 @@ namespace OOPConsoleProject
 {
     public class Item
     {
-        public string name;
-        public string script;
-        public ItemType type;
-        public int price;
-        public int stat;
+        public string name {  get; set; }
+        public string script { get; set; }
+        public ItemType type { get; set; }
+        public int price { get; set; }
+        public int stat {  get; set; }
 
         public Item(string name, string script, ItemType type, int price, int stat)
         {

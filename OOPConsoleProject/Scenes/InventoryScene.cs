@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOPConsoleProject.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,15 @@ namespace OOPConsoleProject.Scenes
     public class InventoryScene : Scene
     {
         private string input;
-        public int index = 0;
+        private int index = 0;
+        private int select;
         private Item item;
         public List<Item> inventory = new List<Item>();
+
+        private Weapons weapon;
+        private Armors armor;
+        private Accs acc;
+        private Consumes consume;
 
         public InventoryScene(Game game) : base(game) { }
 
@@ -37,7 +44,7 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine("-----------------------------------");
             if (inventory[index] != null)
             {
-                Console.WriteLine($">> {index + 1} | {inventory[index].name}");
+                Console.WriteLine($">> {index + 1} | {inventory[index].name} | {inventory[index].script}");
             }
             Console.WriteLine("▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲△▲");
             Console.WriteLine("마을로 돌아가기: 0");
@@ -52,17 +59,38 @@ namespace OOPConsoleProject.Scenes
 
         public override void Update()
         {
+            switch (input)
+            {
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                case "5":
+                case "6":
+                case "7":
+                case "8":
+                case "9":
+                case "10":
+                    if (inventory[index] == null)
+                    {
+                        Console.WriteLine("해당 슬롯은 비어있습니다.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("1. "
+                    }
 
+            }
         }
 
-        public void AddItem(Item item)
+        public void AddItem()
         {
             this.inventory[index] = item;
             index++;
             Render();
         }
 
-        public void RemoveItem(Item item)
+        public void RemoveItem()
         {
             inventory.RemoveAt(index);
             index--;

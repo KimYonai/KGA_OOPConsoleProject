@@ -30,9 +30,9 @@ namespace OOPConsoleProject.Scenes
             Thread.Sleep(2000);
             Console.WriteLine($"그 때, {game.Player.Name} 은/는 나무 그늘에서 쉬고 있던 {game.Monster.Name} 한 마리를 발견한다."); 
             Thread.Sleep(2000);
-            Console.WriteLine($"game.Player.Name도 {game.Player.Name} 을/를 발견하고 화들짝 놀라며 전투태세를 취한다."); 
+            Console.WriteLine($"{game.Monster.Name}도 {game.Player.Name} 을/를 발견하고 화들짝 놀라며 전투태세를 취한다."); 
             Thread.Sleep(2000);
-            Console.WriteLine($"{game.Player.Name} 은/는 싸울 생각이 없었지만, 덤벼드는 {game.Player.Name}을 보고있을 수만은 없다.");
+            Console.WriteLine($"{game.Player.Name} 은/는 싸울 생각이 없었지만, 덤벼드는 {game.Monster.Name}을 보고있을 수만은 없다.");
             Console.WriteLine();
 
             Console.WriteLine("어떻게 하시겠습니까?");
