@@ -44,7 +44,7 @@ namespace OOPConsoleProject.Scenes
                 Console.WriteLine("3. 궁수");
                 Console.WriteLine("4. 도적");
                 Console.WriteLine("5. 성직자");
-                Console.Write("선택한 직업: ");
+                Console.Write("선택한 직업(1 ~ 5): ");
             }
             else if (curState == State.Confirm)
             {
@@ -78,31 +78,25 @@ namespace OOPConsoleProject.Scenes
             }
             else if (curState == State.Job)
             {
-                if (Job.TryParse(input, out Job select) == false)
-                    return;
-
-                if (Enum.IsDefined(typeof(Job), select) == false)
-                    return;
-
-                switch (select)
+                switch (input)
                 {
-                    case Job.Warrior:
+                    case "1":
                         game.Player = new Warrior(nameInput);
                         break;
 
-                    case Job.Mage:
+                    case "2":
                         game.Player = new Mage(nameInput);
                         break;
 
-                    case Job.Archor:
+                    case "3":
                         game.Player = new Archor(nameInput);
                         break;
 
-                    case Job.Rogue:
+                    case "4":
                         game.Player = new Rogue(nameInput);
                         break;
 
-                    case Job.Priest:
+                    case "5":
                         game.Player = new Priest(nameInput);
                         break;
                 }
