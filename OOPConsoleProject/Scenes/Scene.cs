@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleProject
 {
+    // 게임 내 화면 부모 클래스
     public abstract class Scene
     {
         protected Game game;
